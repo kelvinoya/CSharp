@@ -1,144 +1,194 @@
-﻿namespace Hello_World
+﻿// C# Get Started
+using System;
+using System.Linq;
+using System.Runtime.InteropServices;
+using System.Xml.Linq;
+
+namespace Hello_World
 {
-    class FirstProgram
+    class Program
     {
         static void Main(string[] args)
         {
-            // 1. C# DATA TYPES (int, long, double, float, char, string, bool)
-            int x = 10; // integer variable store whole number | from -2,147,483,648 to 2,147,483,647
-                        // long x = 19L; // long variable type from -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 use L suffix to indicate long type
-                        // const int x = 10; // constant variable store whole number, cannot be reassigned
-                        // x = 20; // reassigning the value of x to 20
+            Console.WriteLine("C# Tutorials");
+            Console.WriteLine();
 
-            double y = 0.15; // double variable store decimal number | up to 15 decimal digits | optional use D suffix to indicate double type
+            // 0. C# VARIABLES
+            Console.WriteLine("0. C# Variables");
+            int number = 7;
+            Console.WriteLine();
 
-            int a = 1, b = 2, c = 3; // multiple variable declaration in a single line
-            int d, e;
-            d = e = 4;
+            // 0.1 C# Constants (const variable store whole number, cannot be reassigned or change value)
+            Console.WriteLine("0.1 C# Constants");
+            const double myConst = 3.1415;
+            Console.WriteLine();
 
-            float f = 0.123456F; // up to 6 decimal digits | use F suffix to indicate float type 
+            // 0.2 C# Display Variables (WriteLine() method is use to output (print) values )
+            Console.WriteLine("0.2 C# Display Variables");
+            Console.WriteLine("Number" + number);
+            Console.WriteLine("Constant: " + myConst);
+            Console.WriteLine("Using +" + number + myConst); // Use + to combine (string) or add (integers)
+            Console.WriteLine();
 
-            char singleCharacter = 'A'; // char variable store single character using single quotes
 
-            string greeting = "Hello, World! "; // string variable store text using double quotes
-            string message = "I'm Kel and this is my first C# program.";
+            // 0.3 C# Multiple Variables (use comma-separated list)
+            Console.WriteLine("0.3 C# Multiple Variables");
+            int x = 1, y = 2, z = 3; // Multiple variable declaration in a single line
+            Console.WriteLine("x: " + x);
+            Console.WriteLine("y: " + y);
+            Console.WriteLine("z: " + z);
+            Console.WriteLine();
 
-            string firstName = "Kel"; // name of the variable is called Identifier
-            string lastName = "Vinoya"; // Note: It is recommended to use descriptive names in order to create understandable and maintainable code
-
-            bool isTrue = true; // bool variable store true or false value
-            bool isFalse = false;
-
-            // 2. C# TYPE CASTING | Use for compatibility issue
-            double doubleValue = x; // Implicit Casting | converting int to double
-
-            int intValue = (int)y; // Explicit Casting | converting double to int
-
-            // OUTPUT
-            Console.WriteLine("1. C# DATA TYPES");
-            Console.Write("String: " + greeting); // This is a Single-Line Comment | use Write if you want to print text without a new line
-            Console.WriteLine(message); // WriteLine will print the text and move to the next line
-            Console.WriteLine("Int: " + x + y); // concatenation using + operator
-            Console.WriteLine("Char: " + singleCharacter);
-            Console.WriteLine(firstName + " " + singleCharacter + ". " + lastName);
+            int a, b, c;
+            a = b = c = 4; // Assign value in one line
             Console.WriteLine("a: " + a);
             Console.WriteLine("b: " + b);
             Console.WriteLine("c: " + c);
-            Console.WriteLine("a + b - c: " + (a + b - c));
-            Console.WriteLine("d: " + d);
-            Console.WriteLine("e: " + e);
-            Console.WriteLine("f: " + f);
-            Console.WriteLine("d + e + f: " + (d + e + f));
-            Console.WriteLine("Bool (isTrue): " + isTrue);
-            Console.WriteLine("Bool (isFalse): " + isFalse);
             Console.WriteLine();
 
+            // 0.4 C# Identifier (Note: It is recommended to use descriptive names in order to create understandable and maintainable code)
+            Console.WriteLine("0.4 C# Identifier");
+            int minutesPerHour = 60; // minutePerHour is a variable name also called as identifiers
+            int mph = 60; // Bad naming what does mph mean?
+            Console.WriteLine("Good Variable Name minutePerHour: " + minutesPerHour);
+            Console.WriteLine("Bad Variable Name mph: " + mph);
+            Console.WriteLine();
+
+            // 1. C# DATA TYPES (int, long, float, double, bool, char, string)
+            Console.WriteLine("1. C# DATA TYPES");
+            Console.WriteLine();
+
+            // 1.1 Integer Types
+            // 1.1.1 Int
+            int myInt = 5; // integer variable store whole number | from -2,147,483,648 to 2,147,483,647
+            Console.WriteLine("int data type: " + myInt);
+
+            // 1.1.2 Long (Note that you should end the value with an "L")
+            long myLong = 19L; // long variable type from -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+            Console.WriteLine("long data type: " + myLong);
+            Console.WriteLine();
+
+            // 1.2 Floating Point Types (Note that you should end the value with an "F" for floats and optional "D" for doubles)
+            // 1.2.1 Float
+            float myFloat = 0.123456F; // Up to 6 decimal digits 
+            Console.WriteLine("float data type: " + myFloat);
+
+            // 1.2.2 Double
+            double myDouble = 0.15; // Up to 15 decimal digits 
+            Console.WriteLine("double data type: " + myDouble);
+
+            // 1.2.3 Scientific Numbers ("e" to indicate the power of 10)
+            float myFSciNum = 35e3F;
+            double myDSciNum = 12e4D;
+            Console.WriteLine("35e3F: " + myFSciNum);
+            Console.WriteLine("12e4D: " + myDSciNum);
+            Console.WriteLine();
+
+            // 1.3 Booleans (bool variable store "true" or "false" value)
+            bool isTrue = true;
+            bool isFalse = false;
+            Console.WriteLine("bool data type (isTrue): " + isTrue);
+            Console.WriteLine("bool data type (isFalse): " + isFalse);
+            Console.WriteLine();
+
+            // 1.4 Characters (char variable store single character using single quotes ' ')
+            char myChar = 'A';
+            Console.WriteLine("char data type: " + myChar);
+            Console.WriteLine();
+
+            // 1.5 Strings (string variable store text using double quotes " ")
+            string greeting = "Hello, World!";
+            string message = "I'm Kel and this is my first C# program.";
+            Console.Write("string data type: " + greeting); // Write prints text without moving to a new line
+            Console.WriteLine(message); // WriteLine prints the text and then move to the next line
+            Console.WriteLine();
+
+            // 2. C# TYPE CASTING
             Console.WriteLine("2. C# TYPE CASTING");
-            /* 
-            Implicit Casting (automatically) - converting a smaller type to a larger type size
-            char -> int -> long -> float -> double
-            */
-            Console.WriteLine("Implicit Casting: " + "int data type value: " + x + " => converted to double data type value: " + doubleValue);
-            /*
-            Explicit Casting (manually) - converting a larger type to a smaller size type
-            double -> float -> long -> int -> char
-            */
-            Console.WriteLine("Explicit Casting: " + "double data type value: " + y + " => converted to int data type value: " + intValue);
+            // 2.1 Implicit Casting (Implicit casting is done automatically when passing a smaller size type to a larger size type)
+            // char -> int -> long -> float -> double
+            double implicitCasting = myInt;
+            Console.WriteLine("Implicit Casting: " + "int data type value: " + myInt + " => converted to double data type value: " + implicitCasting);
 
-            // Type Conversion using built-in methods 
-            // (Convert.ToBoolean, Convert.ToDouble, Convert.ToString, Convert.ToInt32 (int) and Convert.ToInt64 (long):)
-            Console.WriteLine(Convert.ToString(x) + " int x is now a string");
-            Console.WriteLine(Convert.ToDouble(x) + " int x is now a double");
-            Console.WriteLine(Convert.ToInt32(y) + " double y is now an int");
-            Console.WriteLine(Convert.ToString(isTrue) + " bool isTrue is now a string");
+            // 2.2 Explicit Casting (Explicit casting must be done manually by placing the type in parentheses in front of the value)
+            // double -> float -> long -> int -> char
+            int explicitCasting = (int)myDouble;
+            Console.WriteLine("Explicit Casting: " + "double data type value: " + myDouble + " => converted to int data type value: " + explicitCasting);
             Console.WriteLine();
 
-            // 3. C# USER INPUT | Use Console.ReadLine() to get user input from the console
+            // 2.3 Type Conversion Methods (using built-in methods)
+            // (Convert.ToBoolean, Convert.ToDouble, Convert.ToString, Convert.ToInt32 (int) and Convert.ToInt64 (long))
+            Console.WriteLine(Convert.ToString(myInt) + " myInt is converted to a string");
+            Console.WriteLine(Convert.ToDouble(myInt) + " myInt x is converted to a double");
+            Console.WriteLine(Convert.ToInt32(myDouble) + " myDouble is converted to an int");
+            Console.WriteLine(Convert.ToString(isTrue) + " bool (isTrue) is converted to a string");
+            Console.WriteLine();
+
+            // 3. C# USER INPUT (ReadLine() method is use to get user input)
             Console.WriteLine("3. C# USER INPUT");
-            Console.WriteLine("Enter your name: ");
 
-            string? userName = Console.ReadLine(); // Include ? to allow null value if user doesn't input anything
+            // 3.1 Get User Input
+            Console.WriteLine("3.1 Get User Input");
+            Console.WriteLine("Enter Your Name: ");
+            string? yourName = Console.ReadLine(); // Include ? to allow null value if user doesn't input anything
+            Console.WriteLine("Your Name: " + yourName);
 
-            Console.WriteLine("Your Name: " + userName);
-
+            // 3.2 User Input and Numbers (ReadLine() returns a string and we need to convert it to integers)
+            Console.WriteLine("3.2 User Input and Numbers");
             Console.WriteLine("Enter your age: ");
-
-            int age = Convert.ToInt32(Console.ReadLine()); // Console.ReadLine() returns a string and we need to convert it to int
-
+            int age = Convert.ToInt32(Console.ReadLine()); // ToInt32() method is use to convert user input (string)
             Console.WriteLine("Your Age: " + age);
             Console.WriteLine();
 
             // 4. C# OPERATORS
             Console.WriteLine("4. C# OPERATORS");
 
-            //  Arithmetic Operators (+, -, *, /, %, ++, --)
+            // 4.1 Arithmetic Operators (+, -, *, /, %, ++, --)
             Console.WriteLine("4.1 Arithmetic Operators");
-            Console.WriteLine(x + y); // addition
-            Console.WriteLine(x - y); // subtraction
-            Console.WriteLine(x * y); // multiplication
-            Console.WriteLine(x / y); // division
-            Console.WriteLine(x % 2); // modulus
-            x++; // increment
-            Console.WriteLine(x); // output
-            x--; // decrement
-            Console.WriteLine(x); // output
+            Console.WriteLine($"a: {a}, b: {b}"); // show values of a and b
+            Console.WriteLine($"a + b: {a + b}"); // addition
+            Console.WriteLine($"a - b: {a - b}"); // subtraction
+            Console.WriteLine($"a * b: {a * b}"); // multiplication
+            Console.WriteLine($"a / b: {a / b}"); // division
+            Console.WriteLine($"a % 2: {a % 2}"); // modulus
+            a++; // increment increase the value by 1
+            Console.WriteLine($"a++: {a}"); // output
+            b--; // decrement decrease the value by 1
+            Console.WriteLine($"b--: {b}"); // output
             Console.WriteLine();
 
-            // Assignment Operators (=, +=, -=, *=, /=, %=, &=, |=, ^=, >>=, <<=)
-            Console.WriteLine("4.2 Assignment Operators");
-            // Test different input 
-            Console.WriteLine("x += 7: " + (x += 7)); // x = x + 7
-            Console.WriteLine("x -= 7: " + (x -= 7)); // x = x - 7
-            Console.WriteLine("x *= 7: " + (x *= 7)); // x = x * 7
-            Console.WriteLine("x /= 7: " + (x /= 7)); // x = x / 7
-            Console.WriteLine("x %= 7: " + (x %= 7)); // x = x % 3
-            Console.WriteLine("x &= 2: " + (x &= 2)); // x = x & 2 bitwise AND
-            Console.WriteLine("x |= 2: " + (x |= 2)); // x = x | 2 bitwise OR
-            Console.WriteLine("x ^= 2: " + (x ^= 2)); // x = x ^ 2 bitwise XOR
-            Console.WriteLine("x >>= 2: " + (x >>= 2)); // x = x >> 2 right shift
-            Console.WriteLine("x <<= 2: " + (x <<= 2)); // x = x << 2 left shift
+            // 4.2 Assignment Operators (=, +=, -=, *=, /=, %=, &=, |=, ^=, >>=, <<=)
+            Console.WriteLine("4.2 Assignment Operators"); // Test Different Input
+            Console.WriteLine($"x: {x}");
+            Console.WriteLine($"x += 7: {x += 7}"); // x = x + 7
+            Console.WriteLine($"x -= 7: {x -= 7}"); // x = x - 7
+            Console.WriteLine($"x *= 7: {x *= 7}"); // x = x * 7
+            Console.WriteLine($"x /= 7: {x /= 7}"); // x = x / 7
+            Console.WriteLine($"x %= 7: {x %= 7}"); // x = x % 3
+            Console.WriteLine($"x &= 2: {x &= 2}"); // x = x & 2 bitwise AND
+            Console.WriteLine($"x |= 2: {x |= 2}"); // x = x | 2 bitwise OR
+            Console.WriteLine($"x ^= 2: {x ^= 2}"); // x = x ^ 2 bitwise XOR
+            Console.WriteLine($"x >>= 2: {x >>= 2}"); // x = x >> 2 right shift
+            Console.WriteLine($"x <<= 2: {x <<= 2}"); // x = x << 2 left shift
             Console.WriteLine();
 
-            // Comparison Operators (==, !=, >, <, >=, <=)
-            Console.WriteLine("4.3 Comparison Operators");
-            x = 10; // reset x to 10
-            Console.WriteLine("x: " + x);
-            Console.WriteLine("y: " + y);
-            Console.WriteLine("x == y: " + (x == y)); // equal to
-            Console.WriteLine("x != y: " + (x != y)); // not equal to
-            Console.WriteLine("x > y: " + (x > y)); // greater than
-            Console.WriteLine("x < y: " + (x < y)); // less than
-            Console.WriteLine("x >= y: " + (x >= y)); // greater than or equal to
-            Console.WriteLine("x <= y: " + (x <= y)); // less than or equal to
+            // 4.3 Comparison Operators (==, !=, >, <, >=, <=)
+            Console.WriteLine("4.3 Comparison Operators"); // Test Different Input
+            Console.WriteLine($"a: {x}, b: {y}"); // show values of a and b
+            Console.WriteLine($"x == y: {x == y}"); // equal to
+            Console.WriteLine($"x != y: {x != y}"); // not equal to
+            Console.WriteLine($"x > y: {x > y}"); // greater than
+            Console.WriteLine($"x < y: {x < y}"); // less than
+            Console.WriteLine($"x >= y: {x >= y}"); // greater than or equal to
+            Console.WriteLine($"x <= y: {x <= y}"); // less than or equal to
             Console.WriteLine();
 
-            // Logical Operators (&&, ||, !)
-            Console.WriteLine("4.4 Logical Operators");
-            x = 10; // reset x to 10
-            Console.WriteLine("x: " + x);
-            Console.WriteLine("x < 5 && x < 10: " + (x < 5 && x < 10)); // logical AND
-            Console.WriteLine("x < 5 || x < 10: " + (x < 5 || x < 10)); // logical OR
-            Console.WriteLine("!isTrue: " + (!isTrue)); // logical NOT
+            // 4.4 Logical Operators (&&, ||, !)
+            Console.WriteLine("4.4 Logical Operators"); // Test Different Input
+            Console.WriteLine($"x: {x}");
+            Console.WriteLine($"x < 5 && x < 10: {x < 5 && x < 10}"); // logical AND
+            Console.WriteLine($"x < 5 || x < 10: {x < 5 || x < 10}"); // logical OR
+            Console.WriteLine($"!isTrue: {!isTrue}"); // logical NOT
             Console.WriteLine();
 
             // 5. C# MATH (Math.Max, Math.Min, Math.Sqrt, Math.Abs, Math.Round)
@@ -150,8 +200,11 @@
             Console.WriteLine("Math.Round(9.99): " + Math.Round(9.99)); // returns the nearest integer)
             Console.WriteLine();
 
-            // 6. C# STRING 
-            Console.WriteLine("6.1 Strings"); // .Legth, .ToLower(), .ToUpper()
+            // 6. C# STRING
+            Console.WriteLine("6. C# STRING");
+
+            // 6.1 Strings (Legth, ToLower(), ToUpper() methods)
+            Console.WriteLine("6.1 Strings"); 
             string myString = "ABCDEFGHIJKLMnopqrstuvwxyz";
             Console.WriteLine("The Length of the String is: " + myString.Length); // returns the length of the string
             Console.WriteLine("myString: " + myString);
@@ -159,38 +212,56 @@
             Console.WriteLine(myString.ToUpper()); // converts the string to uppercase
             Console.WriteLine();
 
-            Console.WriteLine("6.2 Concatenation"); // Remember: Numbers are added.Strings are concatenated.
+            // 6.2 Concatenation (Remember: Numbers are added while Strings are concatenated.)
+            // 6.2.1 String Concatenation
+            Console.WriteLine("6.2 Concatenation");
+            string firstName = "Kel";
+            string lastName = "Vinoya";
             string fullName = firstName + " " + lastName;
             Console.WriteLine("Full Name using +: " + fullName);
-            string name = string.Concat(firstName, lastName); // concatenates two strings
-            Console.WriteLine("Full Name using .Concat(): " + name);
-            int g = 5, h = 10;
-            Console.WriteLine("g: " + g + " + h: " + h + " (int): " + (g + h));
-            string m = "5", n = "10";
-            Console.WriteLine("m: " + m + " + n: " + n + " (string): " + (m + n));
             Console.WriteLine();
 
-            Console.WriteLine("6.3 Interpolation"); // Use $ sign before the string to indicate that it is an interpolated string
+            // 6.2.2 Concat() method to concatenate two strings
+            string name = string.Concat(firstName, lastName); // concatenates two strings
+            Console.WriteLine("Full Name using .Concat(): " + name);
+            Console.WriteLine();
+
+            // 6.2.3 Adding Numbers 
+            int d = 5, e = 10;
+            Console.WriteLine($"d: {d} + e: {e} (Adding Numbers): {d+e}");
+
+            // 6.2.4 Adding Strings
+            string f = "5", g = "10";
+            Console.WriteLine($"f: {f} + g: {g} (Adding Strings): {f + g}");
+            Console.WriteLine();
+
+            // 6.3 Interpolation (Use $ sign before the string to indicate that it is an interpolated string)
+            Console.WriteLine("6.3 Interpolation"); 
             Console.WriteLine($"Full Name using Interpolation($): {firstName} {lastName}");
             Console.WriteLine();
 
-            // Note: String indexes start with 0: [0] is the first character. [1] is the second character, etc.
+            // 6.4 Access Strings (Note: String indexes start with 0: [0] is the first character. [1] is the second character, etc.)
             Console.WriteLine("6.4 Access Strings");
-            // Use [] to access a specific character in the string
+
+            // 6.4.1 Using [] to access a specific character in the string
+            Console.WriteLine("Using []");
             Console.WriteLine($"firstName[0]: {firstName[0]}"); // returns the first character of the string
             Console.WriteLine($"firstName[1]: {firstName[1]}"); // returns the second character of the string
             Console.WriteLine($"firstName[2]: {firstName[2]}"); // returns the third character of the string
-                                                                // Console.WriteLine(firstName[3]); // returns the fourth character of the string System.IndexOutOfRangeException: 'Index was outside the bounds of the array.'
+            // Console.WriteLine(firstName[3]); // returns the fourth character of the string System.IndexOutOfRangeException: 'Index was outside the bounds of the array.'
 
-            // Using .IndexOf() to find the index of a specific character in the string
+            // 6.4.2 Using IndexOf() method to find the index of a specific character in the string
+            Console.WriteLine("Using IndexOf() Method");
             Console.WriteLine($".IndexOf(\"e\") in firstName Kel is: {firstName.IndexOf("e")}"); // returns the index of the first occurrence of the specified character in the string
 
-            // Using .Substring() to extract a portion of the string
+            // 6.4.3 Using .Substring() to extract a portion of the string
+            Console.WriteLine("Using Substring Method");
             int charPosition = fullName.IndexOf("i");
             string lastNameSubstring = fullName.Substring(charPosition); // returns the substring starting from the specified index
             Console.WriteLine($"Substring starting from 'i': {lastNameSubstring}");
 
-            Console.WriteLine("6.5 Special Characters"); // ( \', \", \\, \n, \t, \b)
+            // 6.5 Special Characters ( \', \", \\, \n, \t, \b )
+            Console.WriteLine("6.5 Special Characters");
             Console.WriteLine("This is a string with special characters (single-quotes(')) using (\\'): It\'s a beautiful day!");
             Console.WriteLine("This is a string with special characters (double-quotes) using (\\\"): \"Hello World!\"");
             Console.WriteLine("This is a string with special characters (backslash) using (\\\\): The character \\ is called a backslash.");
@@ -199,22 +270,23 @@
             Console.WriteLine("This is a string with special characters (tab) using (\\t): Hello\tWorld!");
             Console.WriteLine("This is a string with special characters (backspace) using (\\b): Hello\bWorld!");
 
-            // 7. C# Booleans
-            Console.WriteLine("7. C# Booleans");
+            // 7. C# BOOLEANS
+            Console.WriteLine("7. C# BOOLEANS");
+
             int myAge = 17; // Test different input
             int votingAge = 18;
             Console.WriteLine($"Am I applicable? {myAge >= votingAge}");
             Console.WriteLine();
 
             // 8. C# IF-ELSE STATEMENT (if, else, else if, short-hand if else (ternary operator))
-            // if (condition) {}
+            // 8.1 if (condition) {}
             Console.WriteLine("8. C# IF-ELSE STATEMENT");
             if (myAge >= votingAge) // Uppercase letters (If or IF) will generate an error.
             {
                 Console.WriteLine("You are eligible to vote.");
             }
 
-            // else (condition) {}
+            // 8.2 else (condition) {}
             else // Specify a block of code to be executed if the condition is False
             {
                 Console.WriteLine("You are not eligible to vote.");
@@ -222,7 +294,7 @@
             
             Console.WriteLine();
 
-            // else if (condition) {}
+            // 8.3 else if (condition) {}
             Console.WriteLine("Else If Statement");
             int currentTime = 7; // Test different input
 
@@ -245,8 +317,8 @@
 
             Console.WriteLine();
 
-            // short-hand if else (Ternary Operator) | Syntax variable = (condition) ? expressionTrue :  expressionFalse;
-            Console.WriteLine("Ternary Operator");
+            // 8.4 Short-hand if else (Ternary Operator) | Syntax variable = (condition) ? expressionTrue :  expressionFalse;
+            Console.WriteLine("Short-hand if else | Ternary Operator");
             string eligibility = (myAge >= votingAge) ? "You are eligible to vote." : "You are not eligible to vote.";
             Console.WriteLine(eligibility);
 
@@ -300,7 +372,7 @@
 
             Console.WriteLine();
 
-            // do/while loop | do { } while (condition); (LOOPIGN until false)
+            // The Do/While Loop | do { } while (condition); (Loop until false)
             Console.WriteLine("10. C# DO/WHILE LOOP");
             int j = 0;
             do
@@ -320,8 +392,8 @@
             }
 
             Console.WriteLine();
-            // Nested Loops // It is also possible to place a loop inside another loop.
-            Console.WriteLine("Nested Loops");
+            // 11.1 Nested Loops // It is also possible to place a loop inside another loop.
+            Console.WriteLine("11.1.1 Nested Loops");
             for (int o = 0; o < 5; o++) // Outer Loop
             {
                 Console.WriteLine("Outer Loop: " + o);
@@ -345,6 +417,7 @@
 
             // 12. C# BREAK AND CONTINUE STATEMENTS (break, continue)
             Console.WriteLine("12. C# BREAK AND CONTINUE STATEMENTS");
+            
             // BREAK
             Console.WriteLine("BREAK");
             for (int r = 0; r < 10; r++)
@@ -372,7 +445,7 @@
             Console.WriteLine();
 
             // Break in While Loop
-            Console.WriteLine("BREAK in While Loop");
+            Console.WriteLine("Break in While Loop");
             int t = 0;
             while (t < 10)
             {
@@ -404,12 +477,12 @@
 
             // 13. C# ARRAY // EXAMPLE: string[] colors;
             Console.WriteLine("C# ARRAY");
-            // C# Array
+            // 13.1 C# Array
             Console.WriteLine("13.1 C# ARRAY");
             string[] colorsArray = { "Red", "Green", "Blue" }; // Declare and initialize an array using string variable
             int[] numbersArray = { 1, 2, 3, 4, 5 }; // Declare and initialize an array using int variable
             
-            Console.WriteLine(colorsArray[3]); // Access Array Element | Index starts at 0
+            Console.WriteLine(colorsArray[2]); // Access Array Element | Index starts at 0
             Console.WriteLine(numbersArray[2]); // Access Array Element | Index starts at 0
 
             colorsArray[1] = "Yellow"; // Change Array Element
@@ -434,19 +507,89 @@
 
             Console.WriteLine();
 
-            // C# Loop Through Arrays
+            // 13.2 C# Loop Through an Arrays
             Console.WriteLine("13.2 C# Loop Through Arrays"); 
             for (int v = 0; v < colorsArray.Length; v++)
             {
                 Console.WriteLine(colorsArray[v]);
             }
 
-            /* 
-            This
-            is
-            Multi-line
-            Comment
-            */
+            Console.WriteLine();
+
+            //13.2.1 C# Foreach Loop
+            Console.WriteLine("13.2.1 C# Foreach Loop");
+            foreach (string v in colorsArray)
+            {
+                Console.WriteLine(v);
+            }
+
+            Console.WriteLine();
+
+            // 13.3 C# Sort Arrays
+            Console.WriteLine("13.3 C# Sort Arrays");
+            Console.WriteLine("13.3.1 C# Sort String Arrays");
+            // Sort String
+            Array.Sort(colorsArray);
+            foreach (string v in colorsArray)
+            {
+                Console.WriteLine(v);
+            }
+
+            Console.WriteLine();
+
+            // Sort Int
+            Console.WriteLine("13.3.2 C# Sort Int Arrays");
+            Array.Sort(numbersArray);
+            foreach (int v in numbersArray)
+            {
+                Console.WriteLine(v);
+            }
+
+            Console.WriteLine();
+
+            // System.Linq Namespace (see line 2)
+            Console.WriteLine("13.3.3 C# System.Linq NameSpace");
+            Console.WriteLine("numberArray.Max(): " + numbersArray.Max()); // returns the largest value
+            Console.WriteLine("numberArray.Min(): " + numbersArray.Min()); // returns the smallest value
+            Console.WriteLine("numberArray.Sum(): " + numbersArray.Sum()); // returns the sum of elements
+
+            Console.WriteLine();
+
+            // 13.4 C# Multidimensional Array
+            Console.WriteLine("13.4 C# Multidimensional Array");
+            int[,] MultiDArray = { { 1, 3, 5 }, { 2, 4, 6 } }; // 2D Array
+
+            // 13.4.1 Access Elements of a 2D Array
+            // Remember that: Array indexes start with 0: [0] is the first element. [1] is the second element, etc.
+            Console.WriteLine("13.4.1 Access Elements of a 2D Array");
+            Console.WriteLine("MultiDArray[0, 2]: " + MultiDArray[0, 2]); // Output 5
+            Console.WriteLine("MultiDArray[1, 2]: " + MultiDArray[1, 2]); // Output 6
+            Console.WriteLine();
+
+            // 13.4.2 Change Elements of a 2D Array
+            Console.WriteLine("13.4.2 Change Elements of a 2D Array");
+            MultiDArray[0, 0] = 7; // Change the first element to 7
+            Console.WriteLine("New Array: " + MultiDArray[0, 0]); // Instead of 1 its 7 now
+            Console.WriteLine();
+
+            // 13.4.3 Loop Through a 2D Array
+            Console.WriteLine("13.4.3 Loop Through a 2D Array");
+            foreach (int v in MultiDArray)
+            {
+                Console.WriteLine(v);
+            }
+            Console.WriteLine();
+
+            // 13.4.4 For Loop Through a 2D Array
+            // Also note that we have to use GetLength() instead of Length to specify how many times the loop should run:
+            Console.WriteLine("13.4.4 For Loop Through a 2D Array");
+            for (int v = 0; v < MultiDArray.GetLength(0); v++)
+            {
+                for (int w = 0; w < MultiDArray.GetLength(1); w++)
+                {
+                    Console.WriteLine(MultiDArray[v, w]);
+                }
+            }
         }
     }
 }
