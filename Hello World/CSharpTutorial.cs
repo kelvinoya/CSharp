@@ -1,8 +1,6 @@
 ﻿// C# Get Started
 using System;
 using System.Linq;
-using System.Runtime.InteropServices;
-using System.Xml.Linq;
 
 namespace Hello_World
 {
