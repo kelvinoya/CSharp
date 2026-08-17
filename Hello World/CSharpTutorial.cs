@@ -72,12 +72,12 @@ namespace Hello_World
             Console.WriteLine("float data type: " + myFloat);
 
             // 1.2.2 Double
-            double myDouble = 0.15; // Up to 15 decimal digits 
+            double myDouble = 0.15D; // Up to 15 decimal digits 
             Console.WriteLine("double data type: " + myDouble);
 
             // 1.2.3 Scientific Numbers ("e" to indicate the power of 10)
             float myFSciNum = 35e3F;
-            double myDSciNum = 12e4D;
+            double myDSciNum = 12e4;
             Console.WriteLine("35e3F: " + myFSciNum);
             Console.WriteLine("12e4D: " + myDSciNum);
             Console.WriteLine();
@@ -264,9 +264,9 @@ namespace Hello_World
             Console.WriteLine("This is a string with special characters (double-quotes) using (\\\"): \"Hello World!\"");
             Console.WriteLine("This is a string with special characters (backslash) using (\\\\): The character \\ is called a backslash.");
 
-            Console.WriteLine("This is a string with special characters (newline) using (\\n): Hello\nWorld!");
-            Console.WriteLine("This is a string with special characters (tab) using (\\t): Hello\tWorld!");
-            Console.WriteLine("This is a string with special characters (backspace) using (\\b): Hello\bWorld!");
+            Console.WriteLine("This is a string with special characters (newline) using (\\n): Hello\n World!");
+            Console.WriteLine("This is a string with special characters (tab) using (\\t): Hello\t World!");
+            Console.WriteLine("This is a string with special characters (backspace) using (\\b): Hello\b World!");
 
             // 7. C# BOOLEANS
             Console.WriteLine("7. C# BOOLEANS");
@@ -491,16 +491,27 @@ namespace Hello_World
             // OTHER WAYS // If you declare an array and initialize it later, you have to use the new keyword:
             /*
             // Create an array of four elements, and add values later
-            string[] cars = new string[4];
+            string[] colorsArray = new string[3];
 
             // Create an array of four elements and add values right away 
-            string[] cars = new string[4] { "Volvo", "BMW", "Ford", "Mazda" };
+            string[] colorsArray = new string[3] { "Red", "Green", "Blue" };
 
             // Create an array of four elements without specifying the size 
-            string[] cars = new string[] { "Volvo", "BMW", "Ford", "Mazda" };
+            string[] colorsArray = new string[] { "Red", "Green", "Blue" };
 
             // Create an array of four elements, omitting the new keyword, and without specifying the size
-            string[] cars = { "Volvo", "BMW", "Ford", "Mazda" };
+            string[] colorsArray = { "Red", "Green", "Blue" };
+
+            // Note: If you declare an array and initialize it later, you have to use the new keyword
+            // Declare an array
+            string[] colorsArray;
+
+            // Add values, using new
+            colorsArray = new string[] {"Red", "Green", "Blue"};
+
+            // Add values without using new (this will cause an error)
+            colorsArray = {"Red", "Green", "Blue"};
+
             */
 
             Console.WriteLine();
@@ -570,17 +581,17 @@ namespace Hello_World
             Console.WriteLine("New Array: " + MultiDArray[0, 0]); // Instead of 1 its 7 now
             Console.WriteLine();
 
-            // 13.4.3 Loop Through a 2D Array
-            Console.WriteLine("13.4.3 Loop Through a 2D Array");
+            // 13.4.3 Foreach Loop Through a 2D Array
+            Console.WriteLine("13.4.3 Foreach Loop Through a 2D Array");
             foreach (int v in MultiDArray)
             {
                 Console.WriteLine(v);
             }
             Console.WriteLine();
 
-            // 13.4.4 For Loop Through a 2D Array
+            // 13.4.3.1 For Loop Through a 2D Array
             // Also note that we have to use GetLength() instead of Length to specify how many times the loop should run:
-            Console.WriteLine("13.4.4 For Loop Through a 2D Array");
+            Console.WriteLine("13.4.3.1 For Loop Through a 2D Array");
             for (int v = 0; v < MultiDArray.GetLength(0); v++)
             {
                 for (int w = 0; w < MultiDArray.GetLength(1); w++)
