@@ -2,9 +2,9 @@
 using System;
 using System.Linq;
 
-namespace Hello_World
+namespace CSharp
 {
-    class Program
+    class Tutorial
     {
         static void Main(string[] args)
         {
@@ -27,7 +27,6 @@ namespace Hello_World
             Console.WriteLine("Constant: " + myConst);
             Console.WriteLine("Using +" + number + myConst); // Use + to combine (string) or add (integers)
             Console.WriteLine();
-
 
             // 0.3 C# Multiple Variables (use comma-separated list)
             Console.WriteLine("0.3 C# Multiple Variables");
@@ -202,7 +201,7 @@ namespace Hello_World
             Console.WriteLine("6. C# STRING");
 
             // 6.1 Strings (Legth, ToLower(), ToUpper() methods)
-            Console.WriteLine("6.1 Strings"); 
+            Console.WriteLine("6.1 Strings");
             string myString = "ABCDEFGHIJKLMnopqrstuvwxyz";
             Console.WriteLine("The Length of the String is: " + myString.Length); // returns the length of the string
             Console.WriteLine("myString: " + myString);
@@ -226,7 +225,7 @@ namespace Hello_World
 
             // 6.2.3 Adding Numbers 
             int d = 5, e = 10;
-            Console.WriteLine($"d: {d} + e: {e} (Adding Numbers): {d+e}");
+            Console.WriteLine($"d: {d} + e: {e} (Adding Numbers): {d + e}");
 
             // 6.2.4 Adding Strings
             string f = "5", g = "10";
@@ -234,7 +233,7 @@ namespace Hello_World
             Console.WriteLine();
 
             // 6.3 Interpolation (Use $ sign before the string to indicate that it is an interpolated string)
-            Console.WriteLine("6.3 Interpolation"); 
+            Console.WriteLine("6.3 Interpolation");
             Console.WriteLine($"Full Name using Interpolation($): {firstName} {lastName}");
             Console.WriteLine();
 
@@ -289,7 +288,7 @@ namespace Hello_World
             {
                 Console.WriteLine("You are not eligible to vote.");
             }
-            
+
             Console.WriteLine();
 
             // 8.3 else if (condition) {}
@@ -308,7 +307,7 @@ namespace Hello_World
             {
                 Console.WriteLine("Good Evening");
             }
-            else 
+            else
             {
                 Console.WriteLine("Good Night");
             }
@@ -327,8 +326,8 @@ namespace Hello_World
             Console.WriteLine("9. C# SWITCH");
             Console.WriteLine("What day is it today? (1-7):");
             int day = Convert.ToInt32(Console.ReadLine());
-            
-            switch (day) 
+
+            switch (day)
             {
                 case 1:
                     Console.WriteLine("Monday");
@@ -390,6 +389,7 @@ namespace Hello_World
             }
 
             Console.WriteLine();
+
             // 11.1 Nested Loops // It is also possible to place a loop inside another loop.
             Console.WriteLine("11.1.1 Nested Loops");
             for (int o = 0; o < 5; o++) // Outer Loop
@@ -415,7 +415,7 @@ namespace Hello_World
 
             // 12. C# BREAK AND CONTINUE STATEMENTS (break, continue)
             Console.WriteLine("12. C# BREAK AND CONTINUE STATEMENTS");
-            
+
             // BREAK
             Console.WriteLine("BREAK");
             for (int r = 0; r < 10; r++)
@@ -479,7 +479,7 @@ namespace Hello_World
             Console.WriteLine("13.1 C# ARRAY");
             string[] colorsArray = { "Red", "Green", "Blue" }; // Declare and initialize an array using string variable
             int[] numbersArray = { 1, 2, 3, 4, 5 }; // Declare and initialize an array using int variable
-            
+
             Console.WriteLine(colorsArray[2]); // Access Array Element | Index starts at 0
             Console.WriteLine(numbersArray[2]); // Access Array Element | Index starts at 0
 
@@ -517,7 +517,7 @@ namespace Hello_World
             Console.WriteLine();
 
             // 13.2 C# Loop Through an Arrays
-            Console.WriteLine("13.2 C# Loop Through Arrays"); 
+            Console.WriteLine("13.2 C# Loop Through Arrays");
             for (int v = 0; v < colorsArray.Length; v++)
             {
                 Console.WriteLine(colorsArray[v]);
@@ -587,6 +587,7 @@ namespace Hello_World
             {
                 Console.WriteLine(v);
             }
+
             Console.WriteLine();
 
             // 13.4.3.1 For Loop Through a 2D Array
