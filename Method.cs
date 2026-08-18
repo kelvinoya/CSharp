@@ -120,6 +120,7 @@ namespace CSharp
             double myDouble = SumMethod(1.1, 2.2, 3.3); // Must pass floating type
             Console.WriteLine(" | SumMethod() double type: " + myDouble);
 
+
         }
     }
 }
