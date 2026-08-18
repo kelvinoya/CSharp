@@ -6,7 +6,7 @@ namespace CSharp
 {
     class Tutorial
     {
-        static void Main(string[] args)
+        static void MyTutorial()
         {
             Console.WriteLine("C# Tutorials");
             Console.WriteLine();
