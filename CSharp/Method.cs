@@ -11,13 +11,13 @@ namespace CSharp
             Console.WriteLine("This is my Method aka Function");
         }
 
-        // C# 2 Method Parameters
+        // C# 2.1 Parameters and Arguments
         static void MethodParameters(string firstName) // Method with string parameters
         {
             Console.WriteLine(firstName + "Vinoya");
         }
 
-        // C# 2.1 Multiple Parameters
+        // C# 2.2 Multiple Parameters
         static void MultipleParameters(string firstName, string lastName, int age) // Can add many parameters, just separate using comma
         {
             Console.WriteLine($"{firstName} {lastName} is {age} years old.");
@@ -39,7 +39,7 @@ namespace CSharp
         static int ReturnSum(int x, int y) // Multiple Parameters
         {
             Console.Write($"x: {x}, y: {y}");
-            return x + y;
+            return x + y; // must return a value if it is not void
         }
 
         // C# 2.5 Named Arguments
